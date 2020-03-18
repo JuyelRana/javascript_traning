@@ -27,20 +27,23 @@
 
         <script>
 
-          function firstNumber() {
-            // setTimeout(function() {
-            //   document.getElementById("first_number").value = 12;
-            // }, 5000);
+          function firstNumber(value, callback) {
 
-            document.getElementById("first_number").value = 12;
+            setTimeout(function() {
+              document.getElementById("first_number").value = value;
+              callback(); 
+            }, 5000);
+
+
           }
 
           function secondNumber() {
+            setTimeout(function() {
             document.getElementById("second_number").value = 15;
+            }, 2000);
           }
 
-          firstNumber();
-          secondNumber();
+          firstNumber(12, secondNumber);
 
 
         </script>
