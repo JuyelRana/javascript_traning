@@ -18,34 +18,45 @@
 
       <div class="maincontent">
         <div id="show">
-
           <h3>First Number</h3>
-          <input type="text" id="first_number" /> <br><br>
+          <input type="text" id="first_number" /> <br /><br />
           <h3>Second Number</h3>
           <input type="text" id="second_number" />
         </div>
 
         <script>
+          // function firstNumber(value, callback) {
+          //   setTimeout(function() {
+          //     document.getElementById("first_number").value = value;
+          //     callback();
+          //   }, 5000);
+          // }
 
-          function firstNumber(value, callback) {
+          // function secondNumber() {
+          //   setTimeout(function() {
+          //     document.getElementById("second_number").value = 15;
+          //   }, 2000);
+          // }
 
-            setTimeout(function() {
+          // firstNumber(12, secondNumber);
+
+          //  Arrow function with parameters and also call back function
+          firstNumber = (value, callback) => {
+            setTimeout(() => {
               document.getElementById("first_number").value = value;
-              callback(); 
+              callback();
             }, 5000);
+          };
 
-
-          }
-
-          function secondNumber() {
-            setTimeout(function() {
-            document.getElementById("second_number").value = 15;
+          //  arrow function
+          secondNumber = () => {
+            setTimeout(() => {
+              document.getElementById("second_number").value = 15;
             }, 2000);
-          }
+          };
 
-          firstNumber(12, secondNumber);
-
-
+          // function call with parameters
+          firstNumber(30, secondNumber);
         </script>
       </div>
 
